@@ -12,7 +12,7 @@ use {
         signer::Signer,
         transaction::Transaction,
     },
-    std::str::FromStr,
+    std::{path::PathBuf, str::FromStr},
 };
 
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
@@ -32,13 +32,19 @@ fn main() -> Result<()> {
     // Connect to localhost validator
     let rpc_client = RpcClient::new("http://localhost:8899");
 
-    // Load keypair from file (you'll need to create this)
-    let payer = read_keypair_file(&*shellexpand::tilde("~/.config/solana/id.json"))
+    // Load keypair from project's wallet directory
+    let wallet_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .unwrap()
+        .join("wallet")
+        .join("id.json");
+    
+    let payer = read_keypair_file(wallet_path)
         .expect("Failed to read keypair file");
     println!("Payer pubkey: {}", payer.pubkey());
 
     // Program ID (replace with your deployed program ID)
-    let program_id = Pubkey::from_str("4g5NvZ3fjfn46KjJ5ZLCfABp7JfozidespyFNwbBbThQ")?;
+    let program_id = Pubkey::from_str("CmtwqjuwoTREErtzfD8Q3QY7caopyd6k5TmYW48xXFRA")?;
     println!("Program ID: {}", program_id);
 
     // Create a new deposit account

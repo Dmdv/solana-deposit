@@ -1,3 +1,7 @@
 /target
 /test-ledger/
 client/test-ledger/
+# Exclude real wallets
+**/mainnet-wallet.json
+# Keep test wallets
+!~/.config/solana/id.json
