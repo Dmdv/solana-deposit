@@ -1,12 +1,7 @@
 # Solana Deposit Program
 
-A simple Solana program that allows users to deposit SOL, track their balance, and withdraw funds.
-
-## Prerequisites
-
-- Rust and Cargo
-- Solana CLI tools
-- A Solana keypair file (default location: `~/.config/solana/id.json`)
+Создать простое приложение на Rust, взаимодействующее с Solana. Нужно разработать смарт-контракт (программу), который позволяет пользователям вносить депозиты в SOL, отслеживать их баланс и выводить средства.
+контракты можно тестировать в Localnet или Devnet, чтобы не требовались деньги на тесты
 
 ## Building the Program
 
