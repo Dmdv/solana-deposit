@@ -28,6 +28,8 @@ cd client
 cargo run
 ```
 
+![img.png](img.png)
+
 ## Program Features
 
 - Initialize a new deposit account
