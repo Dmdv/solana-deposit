@@ -45,9 +45,6 @@ cargo run
 
 Current wallet public key: `EMmbbKuV6vghd2oBgEV5eWmR6CBrWgRZyB7aWeWtajeV`
 
-To use this wallet:
-1. Make sure you have Solana CLI installed
-2. Use the provided test wallet or create your own:
 ```bash
 # Use provided test wallet
 cp wallet/id.json ~/.config/solana/id.json
@@ -68,25 +65,33 @@ There are two ways to check the balance:
 solana balance <ACCOUNT_ADDRESS>
 ```
 
-2. Using our custom utility:
+2. Using custom tool:
 ```bash
 cd client
 cargo run --bin check_balance
 ```
 
-Example for current deposit account:
-```bash
-# Using Solana CLI
-solana balance Ctqpa8nH5cCbFmUh2f1HgqgPStSAVehwNMWzjKj4WFkz
+### Withdrawing Funds
 
-# Using custom utility
-cargo run --bin check_balance
+To withdraw funds from your deposit account:
+
+1. Make sure your validator is running
+2. Run the withdraw tool:
+```bash
+cd client
+cargo run --bin withdraw
 ```
+
+The withdraw tool will:
+- Show your current balance
+- Withdraw the specified amount (default is 0.5 SOL)
+- Show the final balance after withdrawal
+
 
 ## Important Addresses
 
 - Program ID: `CmtwqjuwoTREErtzfD8Q3QY7caopyd6k5TmYW48xXFRA`
 - Wallet Address: `EMmbbKuV6vghd2oBgEV5eWmR6CBrWgRZyB7aWeWtajeV`
-- Current Deposit Account: `Ctqpa8nH5cCbFmUh2f1HgqgPStSAVehwNMWzjKj4WFkz`
+- Current Deposit Account: `AWSmjmFAnyp25Jj5woJseP8HPybxVsvnp5Dgz8GTN1tq`
 
 ![img.png](img.png)
