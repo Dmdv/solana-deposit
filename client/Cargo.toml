@@ -10,3 +10,7 @@ solana-program = "2.2"
 borsh = "=0.10.3"
 anyhow = "1.0"
 shellexpand = "3.1.0"
+
+[[bin]]
+name = "check_balance"
+path = "src/bin/check_balance.rs"
