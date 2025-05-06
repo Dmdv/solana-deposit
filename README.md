@@ -1,7 +1,22 @@
 # Solana Deposit Program
 
-Создать простое приложение на Rust, взаимодействующее с Solana. Нужно разработать смарт-контракт (программу), который позволяет пользователям вносить депозиты в SOL, отслеживать их баланс и выводить средства.
-контракты можно тестировать в Localnet или Devnet, чтобы не требовались деньги на тесты
+Создать простое приложение на Rust, взаимодействующее с Solana. Нужно разработать смарт-контракт (программу),  
+который позволяет пользователям вносить депозиты в SOL, отслеживать их баланс и выводить средства.  
+Контракты можно тестировать в Localnet или Devnet, чтобы не требовались деньги на тесты
+
+## Instructions
+
+1. Build the program
+2. Build the client
+3. Start validator
+4. Deploy the program
+5. Start the client
+
+```bash
+solana-test-validator --reset
+solana config set --url localhost
+solana program-v4 deploy target/deploy/solana_deposit_program.so --program-keypair new-program-keypair.json
+```
 
 ## Building the Program
 
@@ -29,28 +44,3 @@ cargo run
 ```
 
 ![img.png](img.png)
-
-## Program Features
-
-- Initialize a new deposit account
-- Deposit SOL into the account
-- Withdraw SOL from the account
-- Check account balance
-
-## Testing
-
-The program can be tested on localnet or devnet:
-
-1. Start a local validator:
-```bash
-solana-test-validator
-```
-
-2. Build and deploy the program
-3. Run the client
-
-## Security Considerations
-
-- The program only allows the account owner to withdraw funds
-- All transactions require proper signatures
-- The program checks for sufficient funds before withdrawals 
