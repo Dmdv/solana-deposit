@@ -89,21 +89,4 @@ cargo run --bin check_balance
 - Wallet Address: `EMmbbKuV6vghd2oBgEV5eWmR6CBrWgRZyB7aWeWtajeV`
 - Current Deposit Account: `Ctqpa8nH5cCbFmUh2f1HgqgPStSAVehwNMWzjKj4WFkz`
 
-## Git Configuration
-
-The test wallet is included in the repository for development purposes:
-- Location: `wallet/id.json`
-- **WARNING**: Never commit real mainnet wallets to git!
-
-To exclude real wallets, the following entries are in .gitignore:
-```
-/target
-/test-ledger/
-client/test-ledger/
-# Exclude real wallets
-**/mainnet-wallet.json
-# Keep test wallets
-!wallet/id.json
-```
-
 ![img.png](img.png)
