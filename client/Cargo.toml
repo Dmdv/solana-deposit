@@ -13,3 +13,7 @@ anyhow = "1.0"
 [[bin]]
 name = "check_balance"
 path = "src/bin/check_balance.rs"
+
+[[bin]]
+name = "withdraw"
+path = "src/bin/withdraw.rs"
