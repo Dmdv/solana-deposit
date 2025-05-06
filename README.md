@@ -1,8 +1,6 @@
 # Solana Deposit Program
-
-Create a simple Rust application interacting with Solana.  
-You need to develop a smart contract (program) that allows users to deposit SOL, track their balances, and withdraw funds.  
-You can test the contracts on Localnet or Devnet to avoid spending real money on testing.
+ 
+Smart contract (program) that allows users to deposit SOL, track their balances, and withdraw funds.
 
 ## Instructions
 
